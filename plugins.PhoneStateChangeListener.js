@@ -23,5 +23,8 @@ window.plugins.PhoneStateChangeListener = {
   },
   stop: function(callback) {
     cordova.exec(callback, function (){}, 'PhoneStateChangeListener', 'stop',[]);
+  },
+  greet: function (name, successCallback, errorCallback) {
+        cordova.exec(successCallback, errorCallback, "Hello", "greet", [name]);
   }
 };
