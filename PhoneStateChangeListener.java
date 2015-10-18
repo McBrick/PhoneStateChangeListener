@@ -55,6 +55,10 @@ public class PhoneStateChangeListener extends CordovaPlugin {
 			removePhoneListener();
 			this.callbackContext = null;
 			return true;
+		}else if ("hello".equals(action)) {
+			goodbye();
+			this.callbackContext = null;
+			return true;
 		}
 		
 		return false;
@@ -112,5 +116,21 @@ public class PhoneStateChangeListener extends CordovaPlugin {
 	@Override
 	public void onDestroy() {
 		removePhoneListener();
+	}
+	
+	//hello
+	@Override
+	//public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException 
+	public void goodbye() {
+
+	        //if (action.equals("greet")) {
+	
+	            String name = data.getString(0);
+	            String message = "Hello, " + name;
+	            callbackContext.success(message);
+	
+	            return true;
+	
+	        
 	}
 }
